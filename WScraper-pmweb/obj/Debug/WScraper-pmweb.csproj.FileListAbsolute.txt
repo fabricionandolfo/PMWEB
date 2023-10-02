@@ -126,5 +126,9 @@ C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\System.Drawin
 C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\Tesseract.dll
 C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\WebDriver.dll
 C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\WebDriver.Support.dll
-C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\WebDriver.xml
 C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\WebDriver.Support.xml
+C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\selenium-manager\linux\selenium-manager
+C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\selenium-manager\macos\selenium-manager
+C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\selenium-manager\windows\selenium-manager.exe
+C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\System.Drawing.Common.xml
+C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\SeleniumExtras.WaitHelpers.dll

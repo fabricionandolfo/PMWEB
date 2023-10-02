@@ -1,18 +1,14 @@
 ﻿using HtmlAgilityPack;
-using java.sql;
-using javax.xml.xpath;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WScraper_pmweb.Models;
+using System.Net;
 
 namespace WScraper_pmweb.Controllers
 {
@@ -78,38 +74,29 @@ namespace WScraper_pmweb.Controllers
 			Quarto quarto = new Quarto();
 			reserva.Quartos = new List<Quarto> { quarto };
 
-			IWebDriver driver = new ChromeDriver();
+			WebClient wc = new WebClient();
+			wc.Encoding = System.Text.Encoding.UTF8;
 
-			// Navegar para a página da web
-			driver.Navigate().GoToUrl("https://testautomation.letsbook.com.br/D/Reserva?checkin=02%2F10%2F2023&checkout=03%2F10%2F2023&cidade=&hotel=14&adultos=1&criancas=&destino=Hotel+QA+Absoluto&promocode=&tarifa=&mesCalendario=&_ga=&_gl=&_gcl="); // Substitua pela URL que deseja acessar
+			string pagina = wc.DownloadString("https://testautomation.letsbook.com.br/D/Reserva?checkin=" + checkin.Day + "%2" + checkin.Month + "%2F" + checkin.Year + "&checkout=" + checkout.Day + "%2F" + checkout.Month + "%2F" + checkout.Year + "&hotel=14&adultos=" + quantidadeAdulto + "&criancas=" + quantidadeCrianca);
 
-			// Aguarde até que a página seja completamente carregada (incluindo o JS)
-			WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-			wait.Until(webDriver => ((IJavaScriptExecutor)webDriver).ExecuteScript("return document.readyState").Equals("complete"));
+			HtmlAgilityPack.HtmlDocument htmlDocument = new HtmlAgilityPack.HtmlDocument();
 
-			// Obtenha o conteúdo HTML da página carregada
-			string pageSource = driver.PageSource;
-
-			// Use o HtmlAgilityPack para fazer scraping do conteúdo
-			HtmlDocument doc = new HtmlDocument();
-			doc.LoadHtml(pageSource);
+			 htmlDocument.LoadHtml(pagina);
 
 
-
-			
-
-			
-
-
-
-			foreach (HtmlNode node in htmlDocument.DocumentNode.SelectNodes(xpath:"//*[@id=\"tblAcomodacoes\"]/tbody").ToList())
+			//Imagino que o resolucao disso seja com selenium pois a pagina e gerada por js mas infeslimente nao consegui configurar
+			/*foreach (HtmlNode node in htmlDocument.DocumentNode.Descendants("//*[@id=\"tblAcomodacoes\"]/tbody").ToList())
 			{
 				if (node.Attributes.Count > 0)
 				{
 					quarto.Nome = node.Descendants().First(x => x.Attributes["class"] != null && x.Attributes["class"].Value.Equals("quartoNome")).InnerText;
 				}
 
-			}
+			}*/
+
+
+
+
 
 
 
