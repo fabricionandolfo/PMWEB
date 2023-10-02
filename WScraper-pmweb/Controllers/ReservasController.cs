@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -63,8 +64,22 @@ namespace WScraper_pmweb.Controllers
 
         public void CriarCache(DateTime checkin, DateTime checkout, int quantidadeAdulto, int quantidadeCrianca) 
         {
-        
-        }
+            Reserva reserva= new Reserva();
+			reserva.Checkin = checkin;
+			reserva.Checkout = checkout;
+			reserva.QuantidadeAdulto = quantidadeAdulto;
+			reserva.QuantidadeCrianca = quantidadeCrianca;
+
+			Quarto quarto = new Quarto();
+			reserva.Quartos = new List<Quarto> { quarto };
+
+			string pagina = ("https://testautomation.letsbook.com.br/D/Reserva?checkin="+ checkin.Day+ "%2"+ checkin.Month+ "%2F"+checkin.Year+"&checkout="+ checkout.Day+ "%2F"+ checkout.Month+ "%2F"+ checkout.Year+ "&hotel=14&adultos="+ quantidadeAdulto + "&criancas="+ quantidadeCrianca);
+
+			
+
+            
+
+		}
         public List<Reserva> buscaReservas(DateTime checkin, DateTime checkout, int quantidadeAdulto, int quantidadeCrianca) 
         {
 			var ListaReservaQuartos = db.ListarReservasComQuartos().Where(a => a.Checkin == checkin && a.Checkout == checkout && a.QuantidadeAdulto == quantidadeAdulto && a.QuantidadeCrianca == quantidadeCrianca).ToList();

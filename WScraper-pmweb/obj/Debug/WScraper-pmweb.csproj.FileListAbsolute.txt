@@ -88,3 +88,6 @@ C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\EntityFramewo
 C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\EntityFramework.SqlServer.dll
 C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\EntityFramework.xml
 C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\EntityFramework.SqlServer.xml
+C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\HtmlAgilityPack.dll
+C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\HtmlAgilityPack.pdb
+C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\HtmlAgilityPack.xml
