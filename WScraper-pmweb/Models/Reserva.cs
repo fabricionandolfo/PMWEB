@@ -21,8 +21,11 @@ namespace WScraper_pmweb.Models
 		[Display(Name = "Data do Checkout")]
 		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy", ApplyFormatInEditMode = true)]
 		public DateTime Checkout { get; set; }
-		#endregion
+        #endregion
 
-		
+        public int QuantidadeAdulto { get; set; }	
+		public int QuantidadeCrianca { get; set; }
+
+		public virtual ICollection<Quarto> Quartos { get; set; }
 	}
 }

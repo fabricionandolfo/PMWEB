@@ -84,3 +84,7 @@ C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\obj\Debug\WScrape
 C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\obj\Debug\WScraper-pmweb.csproj.CopyComplete
 C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\obj\Debug\WScraper-pmweb.dll
 C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\obj\Debug\WScraper-pmweb.pdb
+C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\EntityFramework.dll
+C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\EntityFramework.SqlServer.dll
+C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\EntityFramework.xml
+C:\Users\nando\OneDrive\Documentos\GitHub\PMWEB\WScraper-pmweb\bin\EntityFramework.SqlServer.xml

@@ -20,6 +20,10 @@ namespace WScraper_pmweb.Models
 		public float ValorQuato { get; set; }
 		[Required]
 		public float ValorTaxa { get; set; }
+
+		public int ReservaId { get; set; }
+
+		public virtual Reserva Reserva { get; set; }
 		#endregion
 	}
 }

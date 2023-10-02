@@ -1,0 +1,92 @@
+﻿@model IEnumerable<WScraper_pmweb.Models.Reserva>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="card text-center">
+    <div class="card-header">
+        Buscar Quartos
+    </div>
+    <div class="card-body">
+        @using (Html.BeginForm("Index", "Reservas", FormMethod.Get, new { @class = "form-inline" }))
+        {
+            <div class="form-group ">
+                <input type="date" placeholder="Checkin" name="Checkin" class="form-control" />
+            </div>
+            <div class="form-group" style="margin:10px">
+                <input type="date" placeholder="Checkout" name="Checkout" class="form-control" />
+            </div>
+            <div class="form-group " style="margin:10px">
+                <input type="number" placeholder="QuantidadeAdulto" name="QuantidadeAdulto" class="form-control" />
+            </div>
+            <div class="form-group " style="margin:10px">
+                <input type="number" placeholder="QuantidadeCrianca" name="QuantidadeCrianca" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-primary col-md-3">Buscar</button>
+        }
+    </div>
+    <div class="card-footer text-muted">
+        @DateTime.Now
+    </div>
+</div>
+
+
+
+    <table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Checkin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Checkout)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantidadeAdulto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantidadeCrianca)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr style="background-color: beige;">
+            <td>
+                @item.Checkin.ToString().Split()[0]
+            </td>
+            <td>
+                @item.Checkout.ToString().Split()[0]
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantidadeAdulto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantidadeCrianca)
+            </td>
+        </tr>
+
+        foreach (var quarto in item.Quartos)
+        {
+            <tr>
+                <td>
+                    @quarto.Nome
+                </td>
+                <td>
+                    @quarto.Condicao
+                </td>
+                <td>
+                    @("Valor do quarto:" +quarto.ValorQuato+" mais "+quarto.ValorTaxa+" de taxa.")
+                </td>
+                <td>
+                    @("Valor total:"+((( item.Checkout.Day - item.Checkin.Day) * quarto.ValorTaxa)+quarto.ValorQuato))
+                </td>
+            </tr>
+        }
+    }
+
+    </table>
+    
